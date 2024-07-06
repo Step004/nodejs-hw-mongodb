@@ -14,6 +14,9 @@ export const getAllContacts = async ({
 
   const contactsQuery = ContactsCollection.find();
 
+  if (filter.userId) {
+    contactsQuery.where('userId').equals(filter.userId);
+  }
   if (filter.type) {
     contactsQuery.where('contactType').equals(filter.type);
   }
@@ -39,8 +42,8 @@ export const getAllContacts = async ({
   };
 };
 
-export const getContactById = async (studentId) => {
-  const student = await ContactsCollection.findById(studentId);
+export const getContact = async (filter) => {
+  const student = await ContactsCollection.findOne(filter);
   return student;
 };
 

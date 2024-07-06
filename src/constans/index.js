@@ -3,13 +3,5 @@ export const SORT_ORDER = {
   DESC: 'desc',
 };
 
-// export const contactFieldList = [
-//   '_id',
-//   'name',
-//   'phoneNumber',
-//   'email',
-//   'isFavourite',
-//   'contactType',
-//   'createdAt',
-//   'updatedAt',
-// ];
+export const FIFTEEN_MINUTES = 15 * 60 * 1000;
+export const THIRTY_DAY = 30 * 24 * 60 * 60 * 1000;

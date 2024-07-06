@@ -25,12 +25,18 @@ const contactSchema = new Schema(
       enum: ['work', 'home', 'personal'],
       default: 'personal',
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: 'user',
+    },
   },
   {
     timestamps: true,
+    versionKey: false,
   },
 );
 
-contactSchema.post("save", mongooseSaveError);
+contactSchema.post('save', mongooseSaveError);
 
 export const ContactsCollection = model('contacts', contactSchema);
