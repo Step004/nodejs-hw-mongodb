@@ -1,7 +1,7 @@
 import { randomBytes } from 'crypto';
 
 import { FIFTEEN_MINUTES, THIRTY_DAY } from '../constans/index.js';
-import { SessionsCollection } from '../db/models/Session.js';
+import { SessionsCollection } from '../db/models/session.js';
 
 export const findSession = (filter) => SessionsCollection.findOne(filter);
 
